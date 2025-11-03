@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kındu: Geometri Oyun Platformu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div id="splash-screen">
+        <h1 class="splash-text">📐 Kındu</h1>
+        <p class="splash-subtext">Geometri Öğrenme Platformuna Hoş Geldiniz!</p>
+    </div>
+
+    <header id="main-header">
+        <h1>📐 Kındu: Geometri Oyun Platformu</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="ana-menu-link">🏠 Ana Menü</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="ana-icerik">
+        
+        <section id="menu-ekrani" style="display: none;">
+            <h1>Kındu Oyunlarını Seçin</h1>
+            <div class="menu-butonlari">
+                <button id="btn-kindu-oyunlari">
+                    Oyun 1: Açı Avcısı & Diğerleri
+                </button>
+                <button id="btn-poli-oyunu">
+                    Oyun 2: Çokgen Kahramanı 🦸‍♀️
+                </button>
+            </div>
+        </section>
+
+        <section id="kindu-oyun-alani" style="display: none;">
+            
+            <div id="aci-avcisi-oyun" class="konu-modul oyun-alani">
+                <h2>🎯 Açı Avcısı: Paralel Doğrular ve Kesen</h2>
+                <div class="oyun-icerik">
+                    <div id="cizim-alani">
+                        <svg id="geometri-svg" width="400" height="300" viewBox="0 0 400 300">
+                            <text id="label-A" x="0" y="0" font-size="18" class="aci-label"></text>
+                            <text id="label-X" x="0" y="0" font-size="18" class="aci-label"></text>
+                            <text id="label-Y" x="0" y="0" font-size="18" class="aci-label"></text>
+                            <text id="label-Z" x="0" y="0" font-size="18" class="aci-label"></text>
+                        </svg>
+                    </div>
+
+                    <div class="oyun-arayuzu">
+                        <div class="aci-bilgileri">
+                            <p>Verilen Açı <span id="aci-isim" class="vurgu-isim">?</span>: <span id="aci-a-verilen" class="aci-degeri">?°</span></p>
+                        </div>
+                        <div class="input-alani">
+                            <label for="aci-x-input">Açı X:</label><input type="number" id="aci-x-input" placeholder="Derece Girin" min="1">
+                            <label for="aci-y-input">Açı Y:</label><input type="number" id="aci-y-input" placeholder="Derece Girin" min="1">
+                            <label for="aci-z-input">Açı Z:</label><input type="number" id="aci-z-input" placeholder="Derece Girin" min="1">
+                        </div>
+                        <button id="kontrol-et-butonu">Cevapları Kontrol Et</button>
+                        <p id="geribildirim" class="feedback"></p>
+                        <button id="yeni-soru-butonu" style="display: none;">Yeni Soru</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cember-oyunu" class="konu-modul oyun-alani cember-tema">
+                <h2>⚪ Çember: Yarıçap Avı</h2>
+                <div class="oyun-icerik">
+                    <div class="veri-bilgi">
+                        <p>Merkez $M$: (<span id="merkez-x">?</span>, <span id="merkez-y">?</span>)</p>
+                        <p>Nokta $A$: (<span id="nokta-x">?</span>, <span id="nokta-y">?</span>)</p>
+                    </div>
+                    <div class="input-alani">
+                        <label for="yaricap-input">Yarıçap ($r$) Değeri:</label>
+                        <input type="number" id="yaricap-input" placeholder="Sonucu Girin" step="any">
+                    </div>
+                    <button id="cember-kontrol-et">Kontrol Et</button>
+                    <p id="cember-geribildirim" class="feedback"></p>
+                </div>
+            </div>
+
+            <div id="cokgen-oyunu" class="konu-modul oyun-alani cokgen-tema">
+                <h2>🔺 Çokgenler: Köşegen Sayacı</h2>
+                <div class="oyun-icerik">
+                    <div class="veri-bilgi">
+                        <p>Kenar Sayısı ($n$): <span id="kenar-sayisi">?</span></p>
+                    </div>
+                    <div class="input-alani">
+                        <label for="kosegen-input">Köşegen Sayısı ($K$):</label>
+                        <input type="number" id="kosegen-input" placeholder="Tam Sayı Girin" min="0">
+                    </div>
+                    <button id="cokgen-kontrol-et">Kontrol Et</button>
+                    <p id="cokgen-geribildirim" class="feedback"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="poli-oyun-alani" style="display: none;">
+             
+            <div id="poli-gameArea-v2">
+                <h1>🦸‍♀️ Çokgen Kahramanı – Poli’nin Macerası 🎮</h1>
+                <div id="gameArea-v2">
+                    <button id="startBtn-v2">Başla</button>
+                    <p id="info-v2"></p>
+                </div>
+
+                <div id="quizArea-v2" style="display: none;">
+                    <h2>🧠 Quiz Zamanı!</h2>
+                    <div id="questionBox-v2"></div>
+                    <div id="options-v2"></div>
+                    <p id="result-v2"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <button id="calc-button" title="Hesap Makinesi Aç/Kapa">
+        <i class="fas fa-calculator"></i> 
+    </button>
+
+    <div id="calculator" class="hidden">
+        <h3>✅ Hesap Makinesi ✅</h3>
+        <input type="text" id="calc-screen" value="0" disabled>
+        <div class="calc-keys">
+            <button>7</button><button>8</button><button>9</button><button>/</button>
+            <button>4</button><button>5</button><button>6</button><button>*</button>
+            <button>1</button><button>2</button><button>3</button><button>-</button>
+            <button>C</button><button>0</button><button>=</button><button>+</button>
+        </div>
+    </div>
+
+    <footer id="main-footer">
+        <p>© Kındu Geometri Öğrenme Platformu. Eğlenerek öğren!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
