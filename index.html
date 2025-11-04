@@ -22,6 +22,11 @@
             </ul>
         </nav>
     </header>
+    
+    <div id="account-status">
+        <span id="welcome-message"></span>
+        <button id="login-logout-button">Kullanıcı Adı Gir</button>
+    </div>
 
     <main id="ana-icerik">
         
@@ -35,12 +40,19 @@
                     Oyun 2: Çokgen Kahramanı 🦸‍♀️
                 </button>
             </div>
+            
+            <div id="scoreboard-container">
+                <h2>🏆 Skor Tablosu (En İyi 5)</h2>
+                <ul id="high-scores">
+                    <li>Skorlar yükleniyor...</li>
+                </ul>
+            </div>
         </section>
 
         <section id="kindu-oyun-alani" style="display: none;">
             
             <div id="aci-avcisi-oyun" class="konu-modul oyun-alani">
-                <h2>🎯 Açı Avcısı: Paralel Doğrular ve Kesen</h2>
+                <h2>🎯 Açı Avcısı: Paralel Doğrular ve Kesen (Puan: +50)</h2>
                 <div class="oyun-icerik">
                     <div id="cizim-alani">
                         <svg id="geometri-svg" width="400" height="300" viewBox="0 0 400 300">
@@ -68,7 +80,7 @@
             </div>
             
             <div id="cember-oyunu" class="konu-modul oyun-alani cember-tema">
-                <h2>⚪ Çember: Yarıçap Avı</h2>
+                <h2>⚪ Çember: Yarıçap Avı (Puan: +30)</h2>
                 <div class="oyun-icerik">
                     <div class="veri-bilgi">
                         <p>Merkez $M$: (<span id="merkez-x">?</span>, <span id="merkez-y">?</span>)</p>
@@ -84,7 +96,7 @@
             </div>
 
             <div id="cokgen-oyunu" class="konu-modul oyun-alani cokgen-tema">
-                <h2>🔺 Çokgenler: Köşegen Sayacı</h2>
+                <h2>🔺 Çokgenler: Köşegen Sayacı (Puan: +20)</h2>
                 <div class="oyun-icerik">
                     <div class="veri-bilgi">
                         <p>Kenar Sayısı ($n$): <span id="kenar-sayisi">?</span></p>
@@ -118,6 +130,23 @@
         </section>
 
     </main>
+    
+    <button id="aciman-button" title="Acıman AI Asistanı Aç/Kapa">
+        <i class="fas fa-robot"></i> 
+    </button>
+
+    <div id="aciman-assistant" class="hidden">
+        <h3>🤖 Acıman AI Asistanı 🤖</h3>
+        <div id="chat-history">
+            <div class="message aciman-message">
+                Merhaba! Ben Acıman. Geometri ve matematikle ilgili sorularını yanıtlamaktan mutluluk duyarım.
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="aciman-input" placeholder="Sorunuzu buraya yazın...">
+            <button id="aciman-send-button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
     
     <button id="calc-button" title="Hesap Makinesi Aç/Kapa">
         <i class="fas fa-calculator"></i> 
