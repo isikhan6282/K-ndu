@@ -39,6 +39,12 @@
                 <button id="btn-poli-oyunu">
                     Oyun 2: Çokgen Kahramanı 🦸‍♀️
                 </button>
+                <button id="btn-geometri-5-sinif">
+                    Oyun 3: 5. Sınıf Geometri 📐
+                </button>
+                <button id="btn-cokgen-5-sinif">
+                    Oyun 4: Çokgen Bilmecesi 🧩
+                </button>
             </div>
             
             <div id="scoreboard-container">
@@ -126,6 +132,83 @@
                     <div id="options-v2"></div>
                     <p id="result-v2"></p>
                 </div>
+            </div>
+        </section>
+
+        <section id="geometri-5-sinif-oyun-alani" style="display: none;">
+            <div id="game" class="konu-modul">
+                <h1>5. Sınıf Geometri Oyunu (Alan/Çevre)</h1>
+                <div id="scoreboard">Puan: <span id="score5">0</span> | Süre: <span id="time5">60</span> sn</div>
+                <div id="shape5"></div>
+                <div id="question5">Başlamak için Başla düğmesine bas!</div>
+                <input type="text" id="answer5" placeholder="Cevabın" disabled>
+                <div>
+                    <button id="start5">Başla</button>
+                    <button id="check5" disabled>Cevapla</button>
+                    <button id="next5" disabled>Sonraki</button>
+                </div>
+                <div id="result5"></div>
+                <div style="margin-top:15px;font-size:14px;color:#555">Alan - Çevre - Şekil tanıma soruları içerir.</div>
+            </div>
+        </section>
+
+        <section id="cokgen-5-sinif-oyun-alani" style="display: none;">
+            <div class="wrap" id="cokgen-5-wrap">
+                <header>
+                    <h1>Çokgen Oyunu — Kenar sayısını ve çokgenleri öğren</h1>
+                    <div style="margin-left:auto" class="small">5. sınıf düzeyinde, eğlenceli alıştırmalar</div>
+                </header>
+
+                <main>
+                    <div class="play-area">
+                        <div class="title-row">
+                            <div>
+                                <div class="small">Soru</div>
+                                <h2 id="question4">Bu çokgenin adı nedir?</h2>
+                            </div>
+                            <div style="text-align:right">
+                                <div class="small">Puan: <strong id="score4">0</strong></div>
+                                <div class="small">Can: <strong id="lives4">3</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="canvas" aria-live="polite">
+                            <svg id="svg4" viewBox="-250 -250 500 500" role="img" aria-label="Çokgen gösterimi"></svg>
+                        </div>
+
+                        <div class="controls" id="answers4"></div>
+
+                        <div style="display:flex;gap:8px;width:100%;justify-content:center">
+                            <button id="hintBtn4" class="choice">İpucu</button>
+                            <button id="nextBtn4" class="choice">Atla</button>
+                        </div>
+
+                        <div class="small">İpucu kullanırsan puandan 1 düşer. Doğru cevap +2 puan.</div>
+                    </div>
+                </main>
+
+                <aside>
+                    <div class="stat"><strong id="level4">Seviye 1</strong></div>
+
+                    <div class="modes">
+                        <label>Mod:</label>
+                        <select id="mode4">
+                            <option value="isim">İsimle bul (Üçgen, Dörtgen...)</option>
+                            <option value="kenar">Kenar sayısını seç</option>
+                        </select>
+
+                        <label>Zorluk (en kolay = 3 kenar):</label>
+                        <input id="difficulty4" type="range" min="3" max="8" value="5">
+                        <div class="small">Maksimum kenar: <span id="maxSides4">5</span></div>
+
+                        <button id="startBtn4" class="big-btn">Oyunu Başlat</button>
+                    </div>
+
+                    <div class="footer">
+                        <div class="hint" id="hintBox4" style="display:none">İpucu burada görünür.</div>
+                        <p class="small">Oynamak için bir mod seç, zorluğu ayarla ve "Oyunu Başlat" butonuna bas.</p>
+                    </div>
+                </aside>
             </div>
         </section>
 
