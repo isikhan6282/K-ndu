@@ -4,21 +4,21 @@
 #splash-screen {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 2000; /* Her şeyin üstünde olmasını sağlar */
-    background-color: #17a2b8; /* Ana başlık renginiz */
+    z-index: 2000;
+    background-color: #17a2b8;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 1;
-    transition: opacity 0.5s ease-out; /* Yumuşak kaybolma için */
+    transition: opacity 0.5s ease-out;
 }
 
 .splash-text {
     font-size: 5em;
     margin: 0;
-    animation: pulse 1.5s infinite alternate; /* Canlılık katmak için animasyon */
+    animation: pulse 1.5s infinite alternate;
 }
 
 .splash-subtext {
@@ -52,6 +52,81 @@ nav ul { list-style: none; padding: 0; margin-top: 10px; display: flex; justify-
 nav ul li a { color: white; text-decoration: none; padding: 8px 18px; margin: 0 5px; display: block; border-radius: 20px; transition: background-color 0.3s ease; }
 nav ul li a:hover { background-color: #138496; }
 
+/* HESAP VE SKOR TABLOSU STİLLERİ */
+#account-status {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#welcome-message {
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+#login-logout-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#login-logout-button:hover {
+    background-color: #e67e22;
+}
+
+#scoreboard-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+#scoreboard-container h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+#high-scores {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#high-scores li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+
+#high-scores li:last-child {
+    border-bottom: none;
+}
+
+.score-rank {
+    font-weight: bold;
+    color: #f39c12;
+    margin-right: 10px;
+}
+
+.score-value {
+    font-weight: bold;
+    color: #28a745;
+}
 /* Ana İçerik ve Menü Stil Düzenlemesi */
 #ana-icerik { padding: 30px; max-width: 1100px; margin: 20px auto; }
 #kindu-oyun-alani { display: flex; flex-direction: column; gap: 25px; }
@@ -101,9 +176,7 @@ nav ul li a:hover { background-color: #138496; }
 .veri-bilgi { background-color: #e6f7ff; padding: 15px; border-radius: 8px; border: 1px solid #b3e0ff; }
 
 
-/* ==================================================================== */
 /* POLİ KAHRAMANI QUIZLI V2 STİLLERİ */
-/* ==================================================================== */
 #poli-oyun-alani {
     text-align: center;
     background: linear-gradient(120deg, #84fab0, #8fd3f4); 
@@ -180,9 +253,83 @@ nav ul li a:hover { background-color: #138496; }
 }
 
 
-/* ==================================================================== */
+/* ACIMAN AI ASİSTAN STİLLERİ */
+#aciman-button {
+    position: fixed; bottom: 100px; right: 25px; width: 65px; height: 65px; border-radius: 50%;
+    background-color: #ff5722;
+    color: white; border: 3px solid #ffab91; 
+    font-size: 28px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); z-index: 1000;
+}
+#aciman-button:hover {
+    background-color: #e64a19;
+}
+
+#aciman-assistant {
+    position: fixed; bottom: 175px; right: 20px; width: 300px; height: 400px;
+    background-color: #ffffff; color: #343a40;
+    padding: 10px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+#aciman-assistant.hidden { display: none; }
+#aciman-assistant h3 { 
+    color: #ff5722; text-align: center; margin: 0 0 10px 0; padding-bottom: 5px; border-bottom: 1px solid #eee;
+}
+
+#chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.message {
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 85%;
+    line-height: 1.4;
+    font-size: 0.9em;
+}
+.user-message {
+    background-color: #d1e7ff;
+    margin-left: auto;
+    text-align: right;
+}
+.aciman-message {
+    background-color: #ffdbcc;
+    margin-right: auto;
+    text-align: left;
+}
+
+.chat-input-area {
+    display: flex;
+}
+#aciman-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    font-size: 1em;
+}
+#aciman-send-button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+#aciman-send-button:hover {
+    background-color: #e64a19;
+}
+
+
 /* HESAP MAKİNESİ STİLLERİ */
-/* ==================================================================== */
 #calc-button {
     position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; border-radius: 50%;
     background-color: #1e7e34; color: white; border: 3px solid #c3e6cb; 
@@ -202,8 +349,11 @@ nav ul li a:hover { background-color: #138496; }
 }
 .calc-keys button:hover { background-color: #5a6268; }
 /* İşlem tuşlarına ve eşittir tuşuna özel renk */
-.calc-keys button:nth-child(4n), .calc-keys button:nth-child(15), .calc-keys button:nth-child(16) { 
+.calc-keys button:nth-child(4n), .calc-keys button:nth-child(15) { 
     background-color: #ffc107; color: #343a40;
+}
+.calc-keys button:nth-child(15) { 
+    background-color: #28a745; color: white; /* Eşittir için yeşil */
 }
 /* C tuşuna özel renk */
 .calc-keys button:nth-child(13) { 
