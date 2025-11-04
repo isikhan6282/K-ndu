@@ -137,7 +137,7 @@ nav ul li a:hover { background-color: #138496; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    min-height: 80vh;
     background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -181,7 +181,7 @@ nav ul li a:hover { background-color: #138496; }
     text-align: center;
     background: linear-gradient(120deg, #84fab0, #8fd3f4); 
     padding: 50px 20px;
-    height: 80vh;
+    min-height: 80vh;
 }
 #poli-gameArea-v2 h1 {
     font-family: 'Comic Sans MS', sans-serif;
@@ -250,6 +250,190 @@ nav ul li a:hover { background-color: #138496; }
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.2s;
+}
+
+/* OYUN 3: 5. SINIF GEOMETRİ OYUNU STİLLERİ (ALAN/ÇEVRE) */
+#geometri-5-sinif-oyun-alani {
+    text-align: center;
+}
+#game.konu-modul {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+#shape5{margin:20px auto;width:200px;height:200px;}
+#answer5{padding:8px;font-size:16px;width:120px;text-align:center}
+#question5{font-size:20px;margin:20px 0}
+#result5{font-weight:bold;margin-top:10px}
+#scoreboard{margin-top:15px;font-size:18px;color:#333}
+#start5, #check5, #next5 {
+    background:#4CAF50;color:#fff;border:none;padding:10px 20px;
+    border-radius:8px;cursor:pointer;font-size:16px;margin:5px;
+}
+#start5:hover, #check5:hover, #next5:hover{background:#45a049}
+
+/* ==================================================================== */
+/* OYUN 4: ÇOKGEN BİLMECESİ STİLLERİ */
+/* ==================================================================== */
+:root{
+    /* Genel değişkenler */
+    --bg4:#f6fbff;
+    --card4:#ffffff;
+    --accent4:#0b75d1;
+    --good4:#2ea44f;
+    --bad4:#d12b2b;
+}
+
+#cokgen-5-sinif-oyun-alani {
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg4), #eaf4ff);
+    padding: 20px;
+    min-height: 80vh;
+}
+
+#cokgen-5-wrap{
+    width: 980px;
+    max-width: 100%;
+    background: var(--card4);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(11,117,209,0.08);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    margin: 40px auto;
+}
+
+#cokgen-5-wrap header{
+    grid-column: 1/-1;
+    padding: 18px 22px;
+    border-bottom: 1px solid #eef6ff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#cokgen-5-wrap main{
+    padding: 22px;
+}
+
+.play-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.canvas{
+    width: 420px;
+    height: 420px;
+    background: linear-gradient(180deg,#ffffff,#f0fbff);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+}
+
+#svg4{
+    width: 85%;
+    height: 85%;
+}
+
+#answers4 {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#answers4 button, #hintBtn4, #nextBtn4, #startBtn4{
+    background: var(--accent4);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.choice{
+    background: #eef7ff;
+    color: var(--accent4);
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.choice:hover{
+    transform: translateY(-3px);
+}
+
+#cokgen-5-wrap aside{
+    padding: 18px;
+    border-left: 1px solid #eef6ff;
+    background: linear-gradient(180deg,#fff,#fbfdff);
+}
+
+.stat{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.stat strong{
+    font-size: 20px;
+}
+
+.modes{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+#mode4, #difficulty4{
+    width: 100%;
+}
+
+.footer{
+    margin-top: 12px;
+    font-size: 13px;
+    color: #556;
+}
+
+.hint{
+    background: #fff8dc;
+    border: 1px dashed #ffd27a;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.small{
+    font-size: 13px;
+    color: #445;
+}
+
+.title-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.big-btn{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 
